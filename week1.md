@@ -4,8 +4,8 @@
 **Week Ending:** 06-17-2025
 
 ### Courses Completed
-- Started and CKB Academy course 
-   ![Alt text](https://drive.google.com/file/d/1gxLR75SwSTrpUsA7voWgRBhX0Yc9uDfR/view?usp=sharing)
+- Started and CKB Academy course <b>
+  [![Screenshot-from-2026-01-04-19-08-29.png](https://i.postimg.cc/qqrr3nx6/Screenshot-from-2026-01-04-19-08-29.png)](https://postimg.cc/mzmKxPqT)
 - Completed the first **two modules** of the CKB Academy:
      - **CKB Theoretical Knowledge**:
           - Structure of a cell
