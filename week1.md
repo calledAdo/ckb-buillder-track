@@ -1,7 +1,6 @@
 # Builder Track Weekly Report — Week 1
 
-**Name:** Ali Jouahri  
-**Week Ending:** 06-17-2025
+**Name:** Adokiye  
 
 ## Courses Completed
 
@@ -41,5 +40,5 @@
 ### First Trnsaction\*\*
 
 - I built a tranaction manually specifying the cellDeps,Input Cells as Outpoints and Output Cells and the Witneses
-  [![buiding-Tx.png](https://i.postimg.cc/pTxRRhk9/buiding-Tx.png)](https://postimg.cc/hJCH0Gkg)
+   [![buiding-Tx.png](https://i.postimg.cc/pTxRRhk9/buiding-Tx.png)](https://postimg.cc/hJCH0Gkg)
 - I initiated my first transaction on the testnet [Find Details Here](https://testnet.explorer.nervos.org/transaction/0x7d96cadce61d61f49b2f1ece85adadac933de9a30ebb83830a6b7500ae11a019)
