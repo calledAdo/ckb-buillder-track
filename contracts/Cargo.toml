@@ -1,9 +1,19 @@
 [workspace]
 members = [
-     "scripts/carrot",
-     "scripts/tests"
+     "scripts/social_token",
+     "scripts/tests",
+     "scripts/a_token"
 ]
 
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
+
+[profile.release]
+panic = "abort"
+opt-level = "z"
+lto = true
+codegen-units = 1
+
+[profile.dev]
+panic = "abort"

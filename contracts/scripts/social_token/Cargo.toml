@@ -1,0 +1,12 @@
+[package]
+name = "social_token"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ckb-std = "0.14.0" # Assuming 0.14.0 based on general CKB builder track usage. Will check if build fails.
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1

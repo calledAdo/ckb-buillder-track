@@ -1,0 +1,27 @@
+[package]
+name = "a_token"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# The standard CKB library (usually already in your project if you used Capsule)
+ckb-std = "0.14" 
+
+# The official Nervos Auth library pulled directly from GitHub
+ckb-auth = { git = "https://github.com/nervosnetwork/ckb-auth", package = "ckb-auth-rs" }
+
+# For the Sighash calculation
+blake2b-ref = "0.3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+
+[[bin]]
+name = "a_udt_lock"
+path = "src/a_udt_lock.rs"
+
+[[bin]]
+name = "a_udt_type"
+path = "src/a_udt_type.rs"
