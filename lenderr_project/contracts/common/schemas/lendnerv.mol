@@ -1,0 +1,24 @@
+array Uint64 [byte; 8];
+array Uint128 [byte; 16];
+array Byte32 [byte; 32];
+
+table PoolState {
+    liquidity_available: Uint128,
+    total_debt: Uint128,
+    interest_accrued: Uint128,
+    rate_net: Uint128,
+    total_lp_supply: Uint128,
+    timestamp_last_update: Uint64,
+    k_min_current: Uint64,
+    timestamp_last_haircut: Uint64,
+    k_min: Uint64,
+    k_target: Uint64,
+    t_max: Uint64,
+    base_rate: Uint64,
+    max_rate: Uint64,
+    asset_b_type_hash: Byte32,
+    asset_a_type_hash: Byte32,
+    lp_token_type_hash: Byte32,
+    vault_lock_code_hash: Byte32,
+    pool_lock_hash: Byte32,
+}

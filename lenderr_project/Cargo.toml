@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+    "contracts/common",
+    "contracts/pool_script",
+    "contracts/vault_scripts",
+    "contracts/intent_scripts",
+    "contracts/pool_lock",
+    "contracts/test_udt",
+    "contracts/test_token_type",
+    "tests",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+panic = "abort"
+opt-level = "z"
+lto = true
+codegen-units = 1
+
+[profile.dev]
+panic = "abort"

@@ -1,0 +1,12 @@
+[package]
+name = "test_token_type"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ckb-std = "0.14"
+
+[[bin]]
+name = "test_token_type"
+path = "src/main.rs"
+

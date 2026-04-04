@@ -1,0 +1,12 @@
+[package]
+name = "test_udt"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ckb-std = "0.14"
+
+[[bin]]
+name = "test_udt_type"
+path = "src/main.rs"
+

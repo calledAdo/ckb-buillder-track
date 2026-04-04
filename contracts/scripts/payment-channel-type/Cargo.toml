@@ -1,0 +1,13 @@
+[package]
+name = "payment-channel-type"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ckb-std = "1.0"
+blake2b-ref = "0.3"
+k256 = { version = "0.13", default-features = false, features = ["ecdsa"] }
+
+[features]
+library = []
+native-simulator = ["library", "ckb-std/native-simulator"]

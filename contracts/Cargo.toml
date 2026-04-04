@@ -1,8 +1,11 @@
 [workspace]
+resolver = "2"
 members = [
      "scripts/social_token",
      "scripts/tests",
-     "scripts/a_token"
+     "scripts/a_token",
+     "scripts/payment-channel-type",
+     "scripts/cell-owned-lock"
 ]
 
 [workspace.package]

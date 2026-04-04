@@ -1,0 +1,10 @@
+[package]
+name = "tests"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+blake2b-ref = "0.3.1"
+ckb-testtool = "1.0.1"
+ckb-types = "1.0.2"
+lenderr-common = { path = "../contracts/common" }

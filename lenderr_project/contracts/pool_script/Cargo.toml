@@ -1,0 +1,13 @@
+[package]
+name = "pool_script"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ckb-std = "0.14"
+blake2b-ref = "0.3"
+lenderr-common = { path = "../common" }
+
+[[bin]]
+name = "pool_type"
+path = "src/main.rs"

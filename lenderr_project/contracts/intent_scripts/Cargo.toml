@@ -1,0 +1,22 @@
+[package]
+name = "intent_scripts"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ckb-std = "0.14"
+ckb-auth = { git = "https://github.com/nervosnetwork/ckb-auth", package = "ckb-auth-rs" }
+blake2b-ref = "0.3.1"
+lenderr-common = { path = "../common" }
+
+[[bin]]
+name = "deposit_intent_lock"
+path = "src/deposit_intent_lock.rs"
+
+[[bin]]
+name = "borrow_intent_lock"
+path = "src/borrow_intent_lock.rs"
+
+[[bin]]
+name = "withdraw_intent_lock"
+path = "src/withdraw_intent_lock.rs"

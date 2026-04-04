@@ -1,0 +1,8 @@
+[package]
+name = "pool_lock"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ckb-std = "0.14"
+lenderr-common = { path = "../common" }

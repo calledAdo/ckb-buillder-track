@@ -1,0 +1,14 @@
+[package]
+name = "vault_scripts"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ckb-std = "0.14"
+lenderr-common = { path = "../common" }
+
+[[bin]]
+name = "vault_lock"
+path = "src/vault_lock.rs"
+
+

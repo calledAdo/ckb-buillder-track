@@ -25,3 +25,7 @@ path = "src/a_udt_lock.rs"
 [[bin]]
 name = "a_udt_type"
 path = "src/a_udt_type.rs"
+
+[[bin]]
+name = "test_udt_type"
+path = "src/test_udt_type.rs"

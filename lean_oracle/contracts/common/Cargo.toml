@@ -1,0 +1,23 @@
+# This manifest defines the shared `lean-oracle-common` crate.
+# The crate is intentionally small and `no_std`-friendly because it is used by
+# multiple on-chain scripts as their common source of:
+# - data layouts
+# - protocol parsers
+# - hash helpers
+# - verifier helpers
+# - shared error codes
+
+[package]
+# The package name used by Cargo and dependent crates.
+name = "lean-oracle-common"
+# Inherit the workspace version so every crate stays in sync.
+version.workspace = true
+# Inherit the workspace Rust edition for consistency.
+edition.workspace = true
+
+[dependencies]
+# `k256` is used for secp256k1 ECDSA signature parsing and public-key recovery.
+k256 = { version = "0.13.4", default-features = false, features = ["ecdsa"] }
+# `sha3` provides Keccak hashing, which is required for Wormhole and Ethereum
+# address derivation.
+sha3 = { version = "0.10.8", default-features = false }

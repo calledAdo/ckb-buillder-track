@@ -1,0 +1,35 @@
+// This Molecule schema is a design reference for the binary data layouts used
+// by `lean_oracle`.
+//
+// The current implementation uses manual byte encoding/decoding in Rust for
+// simplicity and auditability, but this file records the intended structured
+// schema so the project can move toward generated bindings later if desired.
+
+array Uint32 [byte; 4];
+array Uint64 [byte; 8];
+array Uint128 [byte; 16];
+array Byte20 [byte; 20];
+array Byte32 [byte; 32];
+vector Byte20Vector <Byte20>;
+
+table OracleState {
+    feed_id: Byte32,
+    price: Uint128,
+    conf: Uint128,
+    expo: Uint32,
+    publish_time: Uint64,
+    prev_publish_time: Uint64,
+    guardian_set_index: Uint32,
+    emitter_chain: Uint32,
+    emitter_address: Byte32,
+    max_age_secs: Uint64,
+}
+
+table GuardianSetState {
+    set_index: Uint32,
+    quorum: Uint32,
+    creation_time: Uint64,
+    expiration_time: Uint64,
+    governance_lock_hash: Byte32,
+    guardian_addresses: Byte20Vector,
+}

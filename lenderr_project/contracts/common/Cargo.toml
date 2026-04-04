@@ -1,0 +1,9 @@
+[package]
+name = "lenderr-common"
+version.workspace = true
+edition.workspace = true
+
+# Pure no_std — only uses core types (u64, u128, i128).
+# Tests on the host machine can use no_std libraries without any issue.
+[dependencies]
+molecule = { version = "0.7.2", default-features = false }

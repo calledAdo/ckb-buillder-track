@@ -1,0 +1,45 @@
+# This workspace manifest is the root entry point for the lean_oracle project.
+# It defines:
+# - which crates belong to the project
+# - the shared package metadata used by those crates
+# - the compilation profiles we want for development and release
+#
+# The structure intentionally mirrors `lenderr_project` so that both repos feel
+# similar to navigate and maintain.
+[workspace]
+# Use Cargo's modern feature resolver so dependency features are handled more
+# predictably across the workspace.
+resolver = "2"
+# These are the workspace members that Cargo will treat as one coordinated
+# project. Each path points to a crate inside `lean_oracle`.
+members = [
+    # Shared parsing, hashing, data-layout, and verifier helpers.
+    "contracts/common",
+    # The main oracle state transition validator.
+    "contracts/oracle_script",
+    # The guardian-set state cell validator.
+    "contracts/guardian_set_script",
+    # Host-side tests that exercise the shared logic and protocol encoding.
+    "tests",
+]
+
+[workspace.package]
+# Every crate in the workspace inherits this starting version.
+version = "0.1.0"
+# Every crate in the workspace also inherits the Rust edition.
+edition = "2021"
+
+[profile.release]
+# CKB contracts should abort on panic rather than unwind.
+panic = "abort"
+# Optimize for smaller binaries, which helps on-chain deployment.
+opt-level = "z"
+# Enable link-time optimization for tighter output binaries.
+lto = true
+# Reduce codegen units to help the optimizer produce smaller results.
+codegen-units = 1
+
+[profile.dev]
+# Keep the same panic behavior in development so host and contract behavior stay
+# aligned as much as possible.
+panic = "abort"

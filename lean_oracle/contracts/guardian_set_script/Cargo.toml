@@ -1,0 +1,26 @@
+# This manifest defines the guardian-set contract crate.
+# The crate compiles into one CKB binary:
+# - `guardian_set_type`
+#
+# That script is responsible for validating guardian-set cell creation and
+# guarding against unauthorized mutations during later updates.
+
+[package]
+# Cargo package name for this contract crate.
+name = "guardian_set_script"
+# Inherit workspace version.
+version.workspace = true
+# Inherit workspace edition.
+edition.workspace = true
+
+[dependencies]
+# `ckb-std` provides the low-level CKB contract environment.
+ckb-std = "0.14"
+# `lean-oracle-common` provides shared data layouts and error codes.
+lean-oracle-common = { path = "../common" }
+
+[[bin]]
+# Name of the compiled CKB binary.
+name = "guardian_set_type"
+# Source file for that binary entrypoint.
+path = "src/main.rs"

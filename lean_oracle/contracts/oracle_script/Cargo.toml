@@ -1,0 +1,29 @@
+# This manifest defines the main oracle contract crate.
+# The crate compiles into one CKB binary:
+# - `oracle_type`
+#
+# That script validates oracle-cell state transitions using:
+# - governed guardian-set deps
+# - raw Pyth accumulator updates
+# - Wormhole VAA quorum verification
+# - monotonic publish-time progression
+
+[package]
+# Cargo package name for this contract crate.
+name = "oracle_script"
+# Inherit workspace version.
+version.workspace = true
+# Inherit workspace edition.
+edition.workspace = true
+
+[dependencies]
+# `ckb-std` provides the low-level CKB contract APIs.
+ckb-std = "0.14"
+# `lean-oracle-common` provides the shared protocol logic and byte layouts.
+lean-oracle-common = { path = "../common" }
+
+[[bin]]
+# Name of the compiled CKB binary.
+name = "oracle_type"
+# Source file for that binary entrypoint.
+path = "src/main.rs"

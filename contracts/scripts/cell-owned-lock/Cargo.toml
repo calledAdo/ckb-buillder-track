@@ -1,0 +1,12 @@
+[package]
+name = "cell-owned-lock"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ckb-std = "1.0"
+
+[features]
+# Enables std + alloc so the crate can be imported by a native test harness.
+library = []
+native-simulator = ["library", "ckb-std/native-simulator"]

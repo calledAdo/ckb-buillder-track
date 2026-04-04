@@ -1,0 +1,28 @@
+# This manifest defines the host-side test crate for `lean_oracle`.
+# It depends on the shared common crate plus the same crypto crates used by the
+# protocol so tests can build realistic signed fixtures.
+
+[package]
+# Cargo package name for the test crate.
+name = "tests"
+# Inherit workspace version.
+version.workspace = true
+# Inherit workspace edition.
+edition.workspace = true
+
+[dependencies]
+# Shared parsing and verification logic under test.
+lean-oracle-common = { path = "../contracts/common" }
+# CKB transaction simulation framework for integration testing contract
+# binaries against real transaction skeletons.
+ckb-testtool = "1.0.1"
+# Pin the CKB-flavored schemars package so the CKB dependency graph resolves a
+# compatible `JsonSchema` implementation family.
+ckb_schemars = "=0.8.22"
+# Pin `ckb-fixed-hash-core` away from 1.1.1, whose `schemars` dependency family
+# conflicts with the rest of the current CKB testing stack.
+ckb-fixed-hash-core = "=1.1.0"
+# Host-side secp256k1 signing used to generate realistic Wormhole test fixtures.
+k256 = { version = "0.13.4", default-features = false, features = ["ecdsa"] }
+# Host-side Keccak hashing used to mirror Wormhole/Pyth hashing behavior.
+sha3 = { version = "0.10.8", default-features = false }
